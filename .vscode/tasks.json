@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-glut",
+            "type": "shell",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "${workspaceFolder}/main_glut.cpp",
+                "-o",
+                "${workspaceFolder}/glut_demo.exe",
+                "-lfreeglut",
+                "-lopengl32",
+                "-lglu32",
+                "-lm"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build-opencv",
+            "type": "shell",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
+            "args": [
+                "-g",
+                "-std=c++17",
+                "${workspaceFolder}/main_opencv.cpp",
+                "-o",
+                "${workspaceFolder}/cv_demo.exe",
+                "-IC:/msys64/ucrt64/include/opencv5",
+                "-LC:/msys64/ucrt64/lib",
+                "-lopencv_core",
+                "-lopencv_imgcodecs",
+                "-lopencv_highgui",
+                "-lopencv_imgproc",
+                "-lopencv_videoio"
+            ],
+            "group": "build",
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
